@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace App\Infrastructure\Driven\Persistence\Doctrine\Repository;
 
 use App\Application\Repository\Pokedex\PokedexEntryReadRepository;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
 use App\Domain\Pokedex\Exception\PokedexEntryNotFoundException;
 use App\Domain\Pokedex\PokedexEntry;
 use App\Domain\Pokedex\PokedexEntryId;
 use App\Domain\Pokedex\VO\PokedexEntryNumber;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Ramsey\Uuid\Uuid;
 
 /** @extends ServiceEntityRepository<PokedexEntry> */

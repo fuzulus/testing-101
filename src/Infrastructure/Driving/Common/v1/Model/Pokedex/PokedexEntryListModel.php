@@ -11,6 +11,7 @@ use Undabot\SymfonyJsonApi\Service\Resource\Validation\Constraint\ResourceType;
 
 /**
  * @ResourceType(type="pokedex-entries")
+ *
  * @psalm-immutable
  */
 final class PokedexEntryListModel implements ApiModel

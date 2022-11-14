@@ -8,7 +8,6 @@ use App\Domain\Common\CreateTimestampTrait;
 use App\Domain\Common\UpdateTimestampTrait;
 use App\Domain\Common\VO\Clock;
 use App\Domain\Common\VO\NullableClock;
-use App\Domain\Pokedex\ViewModel\PokedexEntryListViewModel;
 use App\Domain\Pokedex\ViewModel\PokedexEntryViewModel;
 use App\Domain\Pokedex\VO\PokedexEntryNumber;
 use App\Domain\Pokemon\Pokemon;
@@ -16,6 +15,7 @@ use App\Domain\Pokemon\Pokemon;
 class PokedexEntry
 {
     use CreateTimestampTrait;
+
     use UpdateTimestampTrait;
 
     public function __construct(
@@ -45,7 +45,7 @@ class PokedexEntry
 
     public function update(
         PokedexEntryNumber $number,
-        NullableClock      $updatedAt,
+        NullableClock $updatedAt,
     ): void {
         $this->number = $number;
         $this->updatedAt = $updatedAt;

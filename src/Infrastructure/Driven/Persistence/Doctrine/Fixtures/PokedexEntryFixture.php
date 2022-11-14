@@ -56,5 +56,4 @@ final class PokedexEntryFixture extends Fixture implements DependentFixtureInter
 
         $manager->flush();
     }
-
 }

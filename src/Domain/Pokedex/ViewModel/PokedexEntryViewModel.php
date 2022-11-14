@@ -10,8 +10,8 @@ final class PokedexEntryViewModel
         public readonly string $id,
         public readonly string $number,
         public readonly string $pokemonId,
-        public readonly int    $createdAt,
-        public readonly ?int   $updatedAt,
+        public readonly int $createdAt,
+        public readonly ?int $updatedAt,
     ) {
     }
 }

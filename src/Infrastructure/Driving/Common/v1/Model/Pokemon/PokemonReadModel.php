@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace App\Infrastructure\Driving\Common\v1\Model\Pokemon;
 
 use App\Domain\Pokemon\ViewModel\PokemonViewModel;
-use Undabot\SymfonyJsonApi\Model\Resource\Annotation\Attribute;
 use Undabot\SymfonyJsonApi\Model\ApiModel;
+use Undabot\SymfonyJsonApi\Model\Resource\Annotation\Attribute;
 use Undabot\SymfonyJsonApi\Service\Resource\Validation\Constraint\ResourceType;
 
 /**
  * @ResourceType(type="pokemons")
+ *
  * @psalm-immutable
  */
 final class PokemonReadModel implements ApiModel

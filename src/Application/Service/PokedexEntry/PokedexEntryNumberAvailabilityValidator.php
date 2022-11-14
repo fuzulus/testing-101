@@ -11,7 +11,7 @@ use App\Domain\Pokedex\VO\PokedexEntryNumber;
 
 final class PokedexEntryNumberAvailabilityValidator
 {
-    public function __construct(private readonly PokedexEntryReadRepository $pokedexEntryReadRepository,)
+    public function __construct(private readonly PokedexEntryReadRepository $pokedexEntryReadRepository)
     {
     }
 

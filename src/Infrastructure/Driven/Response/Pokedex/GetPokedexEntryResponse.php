@@ -16,7 +16,7 @@ final class GetPokedexEntryResponse
 
     public function __construct(
         private readonly PokedexEntry $pokedexEntry,
-        GetPokedexEntryRequest        $request,
+        GetPokedexEntryRequest $request,
     ) {
         $this->includedEntities = new UniqueCollection();
 

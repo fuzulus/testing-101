@@ -22,9 +22,9 @@ final class MessengerQueryBus implements QueryBus
     }
 
     /**
-     * @throws \Throwable
-     *
      * @return ObjectCollection The handler returned value
+     *
+     * @throws \Throwable
      */
     public function handleQuery(Query $query): ObjectCollection
     {

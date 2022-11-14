@@ -12,9 +12,9 @@ use App\Domain\Pokemon\PokemonId;
 final class CreatePokedexEntryCommand implements Command
 {
     public function __construct(
-        public readonly PokedexEntryId     $id,
+        public readonly PokedexEntryId $id,
         public readonly PokedexEntryNumber $number,
-        public readonly PokemonId          $pokemonId,
+        public readonly PokemonId $pokemonId,
     ) {
     }
 }

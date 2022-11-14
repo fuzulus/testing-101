@@ -9,6 +9,11 @@ use App\Domain\Pokemon\PokemonId;
 
 final class PokemonIdType extends IdType
 {
+    public function getName(): string
+    {
+        return 'pokemonId';
+    }
+
     protected function getIdClass(): string
     {
         return PokemonId::class;
@@ -22,10 +27,5 @@ final class PokemonIdType extends IdType
     protected function isValid(string $value): bool
     {
         return PokemonId::isValid($value);
-    }
-
-    public function getName(): string
-    {
-        return 'pokemonId';
     }
 }

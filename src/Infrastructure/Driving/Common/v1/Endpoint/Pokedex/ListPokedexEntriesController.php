@@ -17,8 +17,8 @@ final class ListPokedexEntriesController
     #[Route(path: '/pokedex-entries', name: 'api.v1.common.pokedex-entries.list', methods: 'GET')]
     public function list(
         GetResourceCollectionRequestInterface $request,
-        QueryBus                              $queryBus,
-        ResourceResponder                     $responder,
+        QueryBus $queryBus,
+        ResourceResponder $responder,
     ): ResourceCollectionResponse {
         $listPokedexEntriesRequest = new ListPokedexEntriesRequest($request);
         $query = $listPokedexEntriesRequest->buildQuery();

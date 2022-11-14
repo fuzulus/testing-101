@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Infrastructure\Driven\EventSubscriber;
 
 use App\Infrastructure\Driven\JsonApi\ErrorHandler;
-use DomainException;
-use InvalidArgumentException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -35,13 +33,10 @@ final class ExceptionSubscriber implements EventSubscriberInterface
 
         $response = match (true) {
             $exception instanceof ParamConverterInvalidUuidFormatException,
-                $exception instanceof NotFoundHttpException,
-            => JsonApiHttpResponse::notFound(),
-            $exception instanceof AccessDeniedHttpException,
-            => JsonApiHttpResponse::forbidden($this->errorHandler->buildError($exception)),
-            $exception instanceof DomainException,
-                $exception instanceof InvalidArgumentException,
-            => JsonApiHttpResponse::badRequest($this->errorHandler->buildError($exception)),
+            $exception instanceof NotFoundHttpException, => JsonApiHttpResponse::notFound(),
+            $exception instanceof AccessDeniedHttpException, => JsonApiHttpResponse::forbidden($this->errorHandler->buildError($exception)),
+            $exception instanceof \DomainException,
+            $exception instanceof \InvalidArgumentException, => JsonApiHttpResponse::badRequest($this->errorHandler->buildError($exception)),
             default => null,
         };
 

@@ -9,6 +9,11 @@ use App\Domain\Pokedex\PokedexEntryId;
 
 final class PokedexEntryIdType extends IdType
 {
+    public function getName(): string
+    {
+        return 'pokedexEntryId';
+    }
+
     protected function getIdClass(): string
     {
         return PokedexEntryId::class;
@@ -22,10 +27,5 @@ final class PokedexEntryIdType extends IdType
     protected function isValid(string $value): bool
     {
         return PokedexEntryId::isValid($value);
-    }
-
-    public function getName(): string
-    {
-        return 'pokedexEntryId';
     }
 }

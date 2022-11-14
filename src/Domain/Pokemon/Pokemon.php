@@ -15,6 +15,7 @@ use App\Domain\Pokemon\VO\PokemonType;
 class Pokemon
 {
     use CreateTimestampTrait;
+
     use UpdateTimestampTrait;
 
     public function __construct(

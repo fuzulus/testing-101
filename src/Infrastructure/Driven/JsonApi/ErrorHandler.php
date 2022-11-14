@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Infrastructure\Driven\JsonApi;
 
 use Symfony\Component\ErrorHandler\Exception\FlattenException;
-use Throwable;
 use Undabot\JsonApi\Definition\Encoding\DocumentToPhpArrayEncoderInterface;
 use Undabot\JsonApi\Implementation\Model\Document\Document;
 use Undabot\JsonApi\Implementation\Model\Error\Error;
@@ -19,7 +18,7 @@ final class ErrorHandler
     }
 
     /** @return mixed[] */
-    public function buildError(Throwable $exception): array
+    public function buildError(\Throwable $exception): array
     {
         $errorCollection = new ErrorCollection([
             $this->buildErrorFromException($exception),
@@ -29,7 +28,7 @@ final class ErrorHandler
         return $this->documentToPhpArrayEncoder->encode($document);
     }
 
-    private function buildErrorFromException(Throwable $exception): Error
+    private function buildErrorFromException(\Throwable $exception): Error
     {
         $class = (new \ReflectionClass($exception))->getShortName();
 

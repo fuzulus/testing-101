@@ -39,7 +39,7 @@ trait EndpointTestCaseTrait
         return (new ValidatorBuilder())->fromYamlFile(__DIR__ . '/../../docs/open_api.yaml');
     }
 
-    /** @param string[]|array[] $body */
+    /** @param array[]|string[] $body */
     protected function prepareBody(array $body): string
     {
         $encodedBody = json_encode($body, JSON_THROW_ON_ERROR);

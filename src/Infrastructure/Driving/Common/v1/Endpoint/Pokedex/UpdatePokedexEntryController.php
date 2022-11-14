@@ -9,7 +9,6 @@ use App\Application\Command\Pokedex\UpdatePokedexEntryCommand;
 use App\Application\Repository\Pokedex\PokedexEntryReadRepository;
 use App\Domain\Pokedex\PokedexEntryId;
 use App\Domain\Pokedex\VO\PokedexEntryNumber;
-use App\Domain\Pokemon\PokemonId;
 use App\Infrastructure\Driving\Common\v1\ApiResponder\ResourceResponder;
 use App\Infrastructure\Driving\Common\v1\Model\Pokedex\PokedexEntryUpdateModel;
 use Symfony\Component\Routing\Annotation\Route;

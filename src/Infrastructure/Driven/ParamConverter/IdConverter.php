@@ -15,7 +15,7 @@ abstract class IdConverter implements ParamConverterInterface
 {
     public function apply(Request $request, ParamConverter $configuration): bool
     {
-        if (false === (is_subclass_of($this->idClass(), Id::class))) {
+        if (false === is_subclass_of($this->idClass(), Id::class)) {
             throw new \InvalidArgumentException('IdClass class name must be instance of Id');
         }
         $name = $configuration->getName();

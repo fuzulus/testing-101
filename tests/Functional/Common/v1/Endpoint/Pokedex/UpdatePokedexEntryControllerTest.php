@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests\Functional\Common\v1\Endpoint\Pokedex;
 
 use App\Infrastructure\Driven\Persistence\Doctrine\Fixtures\PokedexEntryFixture;
-use App\Infrastructure\Driven\Persistence\Doctrine\Fixtures\PokemonFixture;
 use App\Tests\Functional\KernelEndpointTestCase;
 use Symfony\Component\HttpFoundation\Response;
 

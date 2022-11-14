@@ -14,10 +14,10 @@ use App\Domain\Common\VO\NullableClock;
 final class UpdatePokedexEntryCommandHandler
 {
     public function __construct(
-        private readonly PokedexEntryReadRepository              $pokedexEntryReadRepository,
+        private readonly PokedexEntryReadRepository $pokedexEntryReadRepository,
         private readonly PokedexEntryNumberAvailabilityValidator $pokedexEntryNumberAvailabilityValidator,
-        private readonly ClockGenerator                          $clockGenerator,
-        private readonly PokedexEntryWriteRepository             $pokedexEntryWriteRepository,
+        private readonly ClockGenerator $clockGenerator,
+        private readonly PokedexEntryWriteRepository $pokedexEntryWriteRepository,
     ) {
     }
 

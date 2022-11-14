@@ -12,6 +12,7 @@ use Undabot\SymfonyJsonApi\Service\Resource\Validation\Constraint\ResourceType;
 
 /**
  * @ResourceType(type="pokedex-entries")
+ *
  * @psalm-immutable
  */
 final class PokedexEntryCreateModel implements ApiModel
@@ -26,7 +27,6 @@ final class PokedexEntryCreateModel implements ApiModel
         public readonly string $number,
         /**
          * @ToOne(name="pokemon", type="pokemons")
-         *
          * @Assert\NotBlank
          * @Assert\Uuid(versions={"4"})
          */

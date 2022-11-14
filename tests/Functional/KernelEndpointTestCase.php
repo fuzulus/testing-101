@@ -18,6 +18,7 @@ abstract class KernelEndpointTestCase extends WebTestCase implements EndpointTes
     use EndpointTestCaseTrait;
 
     protected static KernelBrowser $client;
+
     protected static ValidatorBuilder $validatorBuilder;
 
     public static function setUpBeforeClass(): void
@@ -51,7 +52,7 @@ abstract class KernelEndpointTestCase extends WebTestCase implements EndpointTes
 
         $this->validateOperation($request, $path, $psr17HttpFactory->createResponse($response));
 
-        self::assertSame($expectedStatusCode, $response->getStatusCode());
+        static::assertSame($expectedStatusCode, $response->getStatusCode());
     }
 
     protected function validatorBuilder(): ValidatorBuilder

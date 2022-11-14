@@ -6,9 +6,9 @@ namespace App\Infrastructure\Driven\Persistence\Doctrine\Repository;
 
 use App\Application\Repository\Pokemon\PokemonWriteRepository;
 use App\Domain\Pokedex\PokedexEntry;
+use App\Domain\Pokemon\Pokemon;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use App\Domain\Pokemon\Pokemon;
 
 /** @extends ServiceEntityRepository<PokedexEntry> */
 final class DoctrinePokemonWriteRepository extends ServiceEntityRepository implements PokemonWriteRepository

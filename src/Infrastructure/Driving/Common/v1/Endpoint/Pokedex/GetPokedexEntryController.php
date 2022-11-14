@@ -17,10 +17,10 @@ final class GetPokedexEntryController
 {
     /** @Route(path="/pokedex-entries/{id}", name="api.v1.common.pokedex-entries.get.by-entry-number", methods={"GET"}) */
     public function get(
-        PokedexEntryId              $id,
-        PokedexEntryReadRepository  $pokedexEntryReadRepository,
+        PokedexEntryId $id,
+        PokedexEntryReadRepository $pokedexEntryReadRepository,
         GetResourceRequestInterface $request,
-        ResourceResponder           $responder,
+        ResourceResponder $responder,
     ): ResourceResponse {
         $pokedexEntry = $pokedexEntryReadRepository->get($id);
 
