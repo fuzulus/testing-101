@@ -1,0 +1,20 @@
+[
+    {
+        "entry": "#001",
+        "name": "Bulbasaur",
+        "type1": "Grass",
+        "type2": "Poison"
+    },
+    {
+        "entry": "#002",
+        "name": "Ivysaur",
+        "type1": "Grass",
+        "type2": "Poison"
+    },
+    {
+        "entry": "#003",
+        "name": "Venusaur",
+        "type1": "Grass",
+        "type2": "Poison"
+    }
+]
