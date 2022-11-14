@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+    php:
+        container_name: svmft_php
+        volumes:
+            - '..:/opt/app'
+        build:
+            args:
+
+    nginx:
+        container_name: svmft_nginx
+        volumes:
+            - '..:/opt/app'
+        ports:
+            - "8000:80"
+
+    db:
+        container_name: svmft_db
+        hostname: "php-app-showcase"
+        ports:
+            - "3306:3306"
