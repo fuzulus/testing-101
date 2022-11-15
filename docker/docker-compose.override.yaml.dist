@@ -6,17 +6,21 @@ services:
         volumes:
             - '..:/opt/app'
         build:
-            args:
+            context: ../
+            dockerfile: docker/services/php/php.Dockerfile
 
     nginx:
         container_name: svmft_nginx
+        build:
+            context: ../
+            dockerfile: docker/services/nginx/nginx.Dockerfile
         volumes:
             - '..:/opt/app'
         ports:
-            - "8000:80"
+            - "8129:80"
 
     db:
         container_name: svmft_db
-        hostname: "php-app-showcase"
+        hostname: "schema-validation-meets-functional-testing"
         ports:
-            - "3306:3306"
+            - 3036:3306
