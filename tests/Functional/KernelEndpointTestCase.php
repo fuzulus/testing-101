@@ -60,15 +60,6 @@ abstract class KernelEndpointTestCase extends WebTestCase implements EndpointTes
         return self::$validatorBuilder;
     }
 
-    protected function createRequest(
-        string $method,
-        string $path,
-        ?string $accessToken = null,
-        ?string $body = null
-    ): Request {
-        return new Request($method, $path, $this->requestHeaders($accessToken), $body);
-    }
-
     protected function sendRequest(RequestInterface $request): SymfonyResponse
     {
         self::$client->request(

@@ -39,6 +39,15 @@ trait EndpointTestCaseTrait
         return (new ValidatorBuilder())->fromYamlFile(__DIR__ . '/../../docs/open_api.yaml');
     }
 
+    protected function createRequest(
+        string $method,
+        string $path,
+        ?string $accessToken = null,
+        ?string $body = null
+    ): Request {
+        return new Request($method, $path, $this->requestHeaders($accessToken), $body);
+    }
+
     /** @param array[]|string[] $body */
     protected function prepareBody(array $body): string
     {
@@ -48,24 +57,17 @@ trait EndpointTestCaseTrait
         return $encodedBody;
     }
 
+    protected function validateRequest(Request $request): void
+    {
+        $this->validatorBuilder()->getRequestValidator()->validate($request);
+    }
+
     protected function validateOperation(Request $request, string $path, ResponseInterface $response): void
     {
         $responseValidator = $this->validatorBuilder()->getResponseValidator();
 
         $operation = new OperationAddress($path, mb_strtolower($request->getMethod()));
         $responseValidator->validate($operation, $response);
-    }
-
-    protected function validateRequest(Request $request): void
-    {
-        $this->validatorBuilder()->getRequestValidator()->validate($request);
-    }
-
-    protected function parseAccessTokenFromResponse(ResponseInterface $response): string
-    {
-        $json = json_decode((string) $response->getBody(), true, 512, JSON_THROW_ON_ERROR);
-
-        return (string) $json['access_token'];
     }
 
     /** @return array<string, string> */
