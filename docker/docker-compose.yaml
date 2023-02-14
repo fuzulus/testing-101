@@ -18,7 +18,7 @@ services:
             - php
 
     db:
-        image: mariadb:10.3.16
+        image: mariadb:10.9.5
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
             MYSQL_DATABASE: ${MYSQL_DATABASE}
