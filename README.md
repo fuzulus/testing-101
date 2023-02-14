@@ -12,6 +12,12 @@ It contains various examples of:
 1. An IDE (e.g. PhpStorm, VS Code, etc.)
 2. Docker
 
+## Software used - 2023-02-14
+
+1. Docker Desktop 4.15.0 (93002)
+2. Docker version 20.10.21, build baeda1f
+3. PhpStorm 2022.3.1, Build #PS-223.8214.64, built on December 22, 2022
+
 ## Setup
 
 1. `git clone git@github.com:fuzulus/testing-101.git`
