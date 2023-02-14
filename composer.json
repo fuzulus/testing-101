@@ -1,6 +1,6 @@
 {
-    "name": "mfuzul/schema-validation-meets-functional-testing",
-    "description": "\"Schema validation meets functional testing\" is a demo code repository for a talk on the subject.",
+    "name": "mfuzul/testing-101",
+    "description": "\"Testing 101\" is a demo code repository for a workshop on the subject.",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
@@ -95,7 +95,7 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "test": [
+        "test:functional": [
             "simple-phpunit --colors=always --testdox --testsuite Functional --bootstrap tests/functional.bootstrap.php"
         ],
         "lint": [
