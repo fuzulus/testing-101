@@ -8,6 +8,11 @@ use App\Domain\Pokedex\Exception\PokedexEntryNumberInvalidFormatException;
 use App\Domain\Pokedex\VO\PokedexEntryNumber;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @coversDefaultClass \App\Domain\Pokedex\VO\PokedexEntryNumber
+ *
+ * @small
+ */
 final class PokedexEntryNumberTest extends TestCase
 {
     public function testObjectWillBeCreatedWithValidPokedexEntryNumber(): void
