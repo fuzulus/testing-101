@@ -34,8 +34,8 @@ final class PokemonFixture extends Fixture
             $entity = new Pokemon(
                 PokemonId::fromString(self::IDS[$i]),
                 new PokemonName($pokemon['name']),
-                PokemonType::fromEnum(PokemonTypeEnum::from($pokemon['type1'])),
-                PokemonType::fromEnum(PokemonTypeEnum::from($pokemon['type2'])),
+                PokemonType::createFromEnum(PokemonTypeEnum::from($pokemon['type1'])),
+                PokemonType::createFromEnum(PokemonTypeEnum::from($pokemon['type2'])),
                 $this->clockGenerator->fromCurrentTime(),
             );
 

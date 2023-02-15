@@ -12,9 +12,14 @@ final class PokemonType
     {
     }
 
-    public static function fromEnum(PokemonTypeEnum $pokemonType): self
+    public static function createFromEnum(PokemonTypeEnum $pokemonType): self
     {
         return new self($pokemonType->value);
+    }
+
+    public static function createEmpty(): self
+    {
+        return new self(null);
     }
 
     public function asStringOrFail(): string
