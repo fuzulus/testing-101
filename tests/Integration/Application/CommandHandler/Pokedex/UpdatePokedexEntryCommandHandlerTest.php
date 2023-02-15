@@ -21,6 +21,7 @@ use App\Tests\Integration\IntegrationTestCase;
 final class UpdatePokedexEntryCommandHandlerTest extends IntegrationTestCase
 {
     private static PokedexEntryReadRepository $pokedexEntryReadRepository;
+
     private static UpdatePokedexEntryCommandHandler $commandHandler;
 
     public static function setUpBeforeClass(): void

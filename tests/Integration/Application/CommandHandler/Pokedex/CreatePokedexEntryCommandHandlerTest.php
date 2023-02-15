@@ -22,6 +22,7 @@ use App\Tests\Integration\IntegrationTestCase;
 final class CreatePokedexEntryCommandHandlerTest extends IntegrationTestCase
 {
     private static PokedexEntryReadRepository $pokedexEntryReadRepository;
+
     private static CreatePokedexEntryCommandHandler $commandHandler;
 
     public static function setUpBeforeClass(): void

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Infrastructure\Driven\Persistence\Doctrine\Repository;
 
 use App\Application\Repository\Pokemon\PokemonReadRepository;
-use App\Domain\Pokedex\PokedexEntry;
 use App\Domain\Pokemon\Exception\PokemonNotFoundException;
 use App\Domain\Pokemon\Pokemon;
 use App\Domain\Pokemon\PokemonId;
