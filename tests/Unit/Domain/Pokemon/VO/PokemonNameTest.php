@@ -21,7 +21,7 @@ final class PokemonNameTest extends TestCase
 
         $pokemonName = new PokemonName($value);
 
-        self::assertSame($value, (string) $pokemonName);
+        static::assertSame($value, (string) $pokemonName);
     }
 
     public function testObjectWillThrowExceptionForBlankName(): void

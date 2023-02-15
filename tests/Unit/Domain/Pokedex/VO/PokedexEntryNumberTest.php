@@ -21,7 +21,7 @@ final class PokedexEntryNumberTest extends TestCase
 
         $pokedexEntryNumber = new PokedexEntryNumber($value);
 
-        self::assertSame($value, (string) $pokedexEntryNumber);
+        static::assertSame($value, (string) $pokedexEntryNumber);
     }
 
     public function testObjectWillThrowExceptionForInvalidFormat(): void
