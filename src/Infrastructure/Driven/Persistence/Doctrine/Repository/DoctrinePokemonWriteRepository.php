@@ -10,7 +10,7 @@ use App\Domain\Pokemon\Pokemon;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-/** @extends ServiceEntityRepository<PokedexEntry> */
+/** @extends ServiceEntityRepository<Pokemon> */
 final class DoctrinePokemonWriteRepository extends ServiceEntityRepository implements PokemonWriteRepository
 {
     public function __construct(ManagerRegistry $registry)

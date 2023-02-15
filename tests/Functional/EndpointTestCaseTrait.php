@@ -48,7 +48,7 @@ trait EndpointTestCaseTrait
         return new Request($method, $path, $this->requestHeaders($accessToken), $body);
     }
 
-    /** @param array[]|string[] $body */
+    /** @param mixed[] $body */
     protected function prepareBody(array $body): string
     {
         $encodedBody = json_encode($body, JSON_THROW_ON_ERROR);

@@ -12,7 +12,6 @@ use Undabot\SymfonyJsonApi\Model\Collection\ObjectCollection;
 
 final class PokedexEntryQueryHandler extends DoctrineQueryHandler
 {
-    /** @return ObjectCollection<int, PokedexEntryListViewModel> */
     public function __invoke(PokedexEntryQuery $query): ObjectCollection
     {
         $qb = $this->entityManager->createQueryBuilder()

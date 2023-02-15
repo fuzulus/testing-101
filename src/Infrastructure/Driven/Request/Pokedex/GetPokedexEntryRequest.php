@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Driven\Request\Pokedex;
 
-use Undabot\SymfonyJsonApi\Http\Model\Request\GetResourceRequest;
+use Undabot\JsonApi\Definition\Model\Request\GetResourceRequestInterface;
 
 final class GetPokedexEntryRequest
 {
     public const INCLUDE_POKEMON = 'pokemon';
 
-    public function __construct(private readonly GetResourceRequest $request)
+    public function __construct(private readonly GetResourceRequestInterface $request)
     {
         $request->allowIncluded([
             self::INCLUDE_POKEMON,

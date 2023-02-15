@@ -34,6 +34,19 @@ final class MessengerQueryBus implements QueryBus
             throw $ex->getNestedExceptions()[0];
         }
 
+        if (
+            false === ($result instanceof ObjectCollection)
+            && false === \is_array($result)
+        ) {
+            throw new \LogicException(
+                sprintf(
+                    'Expected array or %s, got %s.',
+                    ObjectCollection::class,
+                    get_debug_type($result),
+                ),
+            );
+        }
+
         if (false === ($result instanceof ObjectCollection)) {
             $result = new ArrayCollection($result);
         }

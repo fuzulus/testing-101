@@ -11,11 +11,8 @@ use Undabot\SymfonyJsonApi\Model\Collection\ObjectCollection;
 final class ListPokedexEntriesResponse
 {
     public function __construct(
-        /** @var ObjectCollection<int, PokedexEntryListViewModel> $pokedexEntries */
         private readonly ObjectCollection $pokedexEntries,
-        ListPokedexEntriesRequest $request,
     ) {
-        // todo: add logic if necessary
     }
 
     public function resources(): ObjectCollection

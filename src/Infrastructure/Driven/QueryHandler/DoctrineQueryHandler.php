@@ -20,13 +20,26 @@ abstract class DoctrineQueryHandler implements PaginatedQueryHandler
 
     public function makePaginatedResultsIfNeeded(QueryBuilder $queryBuilder, PaginatedQuery $query): ObjectCollection
     {
-        return (null !== $query->offset && null !== $query->size)
-            ? (new Paginator())
+        if (null !== $query->offset && null !== $query->size) {
+            return (new Paginator())
                 ->createPaginatedCollection(
                     $queryBuilder,
                     $query->offset,
                     $query->size
-                )
-            : new ArrayCollection($queryBuilder->getQuery()->getResult());
+                );
+        }
+
+        $result = $queryBuilder->getQuery()->getResult();
+
+        if (\is_array($result)) {
+            return new ArrayCollection($result);
+        }
+
+        throw new \LogicException(
+            sprintf(
+                'Expected array, got %s.',
+                get_debug_type($result),
+            ),
+        );
     }
 }

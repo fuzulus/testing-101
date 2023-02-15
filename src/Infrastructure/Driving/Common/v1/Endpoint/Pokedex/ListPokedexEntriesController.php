@@ -25,7 +25,7 @@ final class ListPokedexEntriesController
 
         $results = $queryBus->handleQuery($query);
 
-        $response = new ListPokedexEntriesResponse($results, $listPokedexEntriesRequest);
+        $response = new ListPokedexEntriesResponse($results);
 
         return $responder->resourceObjectCollection($response->resources());
     }

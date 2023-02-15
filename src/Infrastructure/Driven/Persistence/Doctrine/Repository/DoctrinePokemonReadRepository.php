@@ -13,7 +13,7 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Ramsey\Uuid\Uuid;
 
-/** @extends ServiceEntityRepository<PokedexEntry> */
+/** @extends ServiceEntityRepository<Pokemon> */
 final class DoctrinePokemonReadRepository extends ServiceEntityRepository implements PokemonReadRepository
 {
     public function __construct(ManagerRegistry $registry)

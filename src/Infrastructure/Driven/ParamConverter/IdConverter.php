@@ -21,7 +21,13 @@ abstract class IdConverter implements ParamConverterInterface
         $name = $configuration->getName();
 
         try {
-            $value = $this->idClass()::fromString($request->attributes->get($name));
+            $id = $request->attributes->get($name);
+
+            if (false === \is_string($id)) {
+                throw new \InvalidArgumentException(sprintf('Expected string, got %s.', get_debug_type($id)));
+            }
+
+            $value = $this->idClass()::fromString($id);
         } catch (InvalidIdentityException $ex) {
             throw new ParamConverterInvalidUuidFormatException($ex->getMessage(), (int) $ex->getCode(), $ex);
         }

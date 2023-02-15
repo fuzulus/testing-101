@@ -44,8 +44,10 @@
         "fakerphp/faker": "^1.13",
         "friendsofphp/php-cs-fixer": "^3.6",
         "league/openapi-psr7-validator": "^0.17.0",
+        "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan": "^1.2",
         "phpstan/phpstan-beberlei-assert": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.3",
         "roave/security-advisories": "dev-latest",
         "symfony/browser-kit": "^6.0",
         "symfony/debug-bundle": "^6.0",
@@ -62,7 +64,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "phpstan/extension-installer": true
         }
     },
     "autoload": {
@@ -121,6 +124,11 @@
     "extra": {
         "symfony": {
             "allow-contrib": true
+        },
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
         }
     }
 }
