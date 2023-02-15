@@ -98,6 +98,9 @@
         "test:unit": [
             "simple-phpunit --colors=always --testdox --testsuite Unit"
         ],
+        "test:integration": [
+            "simple-phpunit --colors=always --testdox --testsuite Integration --bootstrap tests/integration.bootstrap.php"
+        ],
         "test:functional": [
             "simple-phpunit --colors=always --testdox --testsuite Functional --bootstrap tests/functional.bootstrap.php"
         ],
