@@ -2,7 +2,6 @@ version: '3.7'
 
 services:
     php:
-        container_name: testing_101_php
         volumes:
             - '..:/opt/app'
         build:
@@ -10,7 +9,6 @@ services:
             dockerfile: docker/services/php/php.Dockerfile
 
     nginx:
-        container_name: testing_101_nginx
         build:
             context: ../
             dockerfile: docker/services/nginx/nginx.Dockerfile
@@ -20,7 +18,5 @@ services:
             - "8129:80"
 
     db:
-        container_name: testing_101_db
-        hostname: "testing-101"
         ports:
             - 3036:3306
