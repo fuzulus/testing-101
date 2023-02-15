@@ -107,6 +107,9 @@
         "lint": [
             "php-cs-fixer fix --diff --ansi --dry-run"
         ],
+        "lint:fix": [
+            "php-cs-fixer fix"
+        ],
         "qc": [
             "php -d memory_limit=-1 vendor/bin/phpstan analyse -n --ansi --no-progress",
             "./vendor/bin/psalm --memory-limit=-1"
