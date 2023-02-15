@@ -31,7 +31,7 @@ final class PokedexEntryQueryHandler extends DoctrineQueryHandler
 
         if (null !== $query->number) {
             $qb->andWhere('pe.number.number = :entryNumber')
-                ->setParameter('entryNumber', (string) $query->number);
+                ->setParameter('entryNumber', $query->number);
         }
 
         return $this->makePaginatedResultsIfNeeded($qb, $query);

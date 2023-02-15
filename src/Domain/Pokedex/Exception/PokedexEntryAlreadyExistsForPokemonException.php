@@ -13,7 +13,7 @@ final class PokedexEntryAlreadyExistsForPokemonException extends \DomainExceptio
         parent::__construct(
             sprintf(
                 'Pokedex entry already exists for Pokemon %s.',
-                $pokemon->name(),
+                (string) $pokemon->name(),
             ),
         );
     }

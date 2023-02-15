@@ -18,7 +18,7 @@ final class PokemonNotFoundException extends \DomainException
         return new self(
             sprintf(
                 'Pokemon with id %s not found.',
-                $id,
+                (string) $id,
             ),
         );
     }

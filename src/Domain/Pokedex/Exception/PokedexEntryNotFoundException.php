@@ -19,7 +19,7 @@ final class PokedexEntryNotFoundException extends \DomainException
         return new self(
             sprintf(
                 'Pokedex entry with id %s not found.',
-                $id,
+                (string) $id,
             ),
         );
     }
@@ -29,7 +29,7 @@ final class PokedexEntryNotFoundException extends \DomainException
         return new self(
             sprintf(
                 'Pokedex entry with number %s not found.',
-                $entryNumber,
+                (string) $entryNumber,
             ),
         );
     }

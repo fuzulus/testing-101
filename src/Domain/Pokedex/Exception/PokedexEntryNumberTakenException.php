@@ -13,7 +13,7 @@ final class PokedexEntryNumberTakenException extends \DomainException
         parent::__construct(
             sprintf(
                 'Pokedex entry number %s is taken.',
-                $entryNumber,
+                (string) $entryNumber,
             ),
         );
     }
