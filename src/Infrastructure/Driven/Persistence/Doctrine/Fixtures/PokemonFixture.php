@@ -15,10 +15,12 @@ use Doctrine\Persistence\ObjectManager;
 
 final class PokemonFixture extends Fixture
 {
+    public const NO_POKEDEX_ENTRY_ID = 'b74dca84-d066-49c4-b91a-72cecdee68d3';
+
     public const IDS = [
         'b74dca84-d066-49c4-b91a-72cecdee68d1',
         'b74dca84-d066-49c4-b91a-72cecdee68d2',
-        'b74dca84-d066-49c4-b91a-72cecdee68d3',
+        self::NO_POKEDEX_ENTRY_ID,
     ];
 
     public function __construct(private readonly ClockGenerator $clockGenerator)
