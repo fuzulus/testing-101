@@ -95,6 +95,9 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+        "test:unit": [
+            "simple-phpunit --colors=always --testdox --testsuite Unit"
+        ],
         "test:functional": [
             "simple-phpunit --colors=always --testdox --testsuite Functional --bootstrap tests/functional.bootstrap.php"
         ],
