@@ -27,8 +27,15 @@ abstract class IdType extends Type
             return $value;
         }
 
+        if (true === \is_string($value)) {
+            return $this->createIdFromString($value);
+        }
+
         try {
-            if (false === $value instanceof \Stringable) {
+            if (
+                false === $value instanceof \Stringable
+                && false === (\is_object($value) && method_exists($value, '__toString'))
+            ) {
                 throw new \InvalidArgumentException();
             }
 
@@ -46,17 +53,17 @@ abstract class IdType extends Type
             return null;
         }
 
+        if (\is_string($value)) {
+            return $value;
+        }
+
         $idClass = $this->getIdClass();
+
         if (
             $value instanceof $idClass
-            || (
-                (\is_string($value) || $value instanceof \Stringable)
-                && $this->isValid((string) $value)
-            )
+            && $value instanceof Id
         ) {
-            if ($value instanceof \Stringable) {
-                return (string) $value;
-            }
+            return (string) $value;
         }
 
         throw ConversionException::conversionFailed($value, $this->getName());
@@ -67,6 +74,7 @@ abstract class IdType extends Type
         return true;
     }
 
+    /** @return class-string */
     abstract protected function getIdClass(): string;
 
     abstract protected function createIdFromString(string $value): Id;
