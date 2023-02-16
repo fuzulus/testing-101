@@ -6,14 +6,14 @@ namespace App\Tests\Unit\Domain\Pokemon\VO;
 
 use App\Domain\Pokemon\Enum\PokemonTypeEnum;
 use App\Domain\Pokemon\VO\PokemonType;
-use PHPUnit\Framework\TestCase;
+use App\Tests\Unit\UnitTestCase;
 
 /**
  * @coversDefaultClass \App\Domain\Pokemon\VO\PokemonType
  *
  * @small
  */
-final class PokemonTypeTest extends TestCase
+final class PokemonTypeTest extends UnitTestCase
 {
     public function testValidObjectWillBeCreatedFromPokemonTypeEnum(): void
     {

@@ -6,14 +6,14 @@ namespace App\Tests\Unit\Domain\Pokemon\VO;
 
 use App\Domain\Pokemon\Exception\PokemonNameCannotBeBlankException;
 use App\Domain\Pokemon\VO\PokemonName;
-use PHPUnit\Framework\TestCase;
+use App\Tests\Unit\UnitTestCase;
 
 /**
  * @coversDefaultClass \App\Domain\Pokemon\VO\PokemonName
  *
  * @small
  */
-final class PokemonNameTest extends TestCase
+final class PokemonNameTest extends UnitTestCase
 {
     public function testObjectWillBeCreatedWithValidPokemonName(): void
     {
