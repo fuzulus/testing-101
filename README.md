@@ -1,6 +1,7 @@
 # Testing 101
 <img alt="Release" src="https://img.shields.io/github/v/release/fuzulus/testing-101">
 <img alt="PHP version" src="https://img.shields.io/badge/php-%5E8.1-blue">
+<img alt="Symfony version" src="https://img.shields.io/badge/symfony-%5E6.0-violet">
 <br>
 <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/fuzulus/testing-101">
 <img alt="Last commit" src="https://img.shields.io/github/last-commit/fuzulus/testing-101">
