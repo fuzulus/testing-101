@@ -107,6 +107,15 @@
         "test:functional": [
             "simple-phpunit --colors=always --testdox --testsuite Functional --bootstrap tests/functional.bootstrap.php"
         ],
+        "test:coverage:unit": [
+            "XDEBUG_MODE=coverage simple-phpunit --testsuite Unit --coverage-text"
+        ],
+        "test:coverage:integration": [
+            "XDEBUG_MODE=coverage simple-phpunit --testsuite Integration --bootstrap tests/integration.bootstrap.php --coverage-text"
+        ],
+        "test:coverage:functional": [
+            "XDEBUG_MODE=coverage simple-phpunit --testsuite Functional --bootstrap tests/functional.bootstrap.php --coverage-text"
+        ],
         "lint": [
             "php-cs-fixer fix --diff --ansi --dry-run"
         ],

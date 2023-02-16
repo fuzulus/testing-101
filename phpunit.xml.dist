@@ -32,11 +32,17 @@
         </testsuite>
     </testsuites>
 
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+    <coverage processUncoveredFiles="true">
+        <include>
             <directory suffix=".php">src</directory>
-        </whitelist>
-    </filter>
+        </include>
+        <exclude>
+            <file>src/Kernel.php</file>
+            <directory>src/Infrastructure/Driven</directory>
+            <directory>src/Infrastructure/Driving/Common/v1/ApiResponder</directory>
+            <directory>src/Infrastructure/Driving/Common/v1/Model</directory>
+        </exclude>
+    </coverage>
 
     <listeners>
         <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
