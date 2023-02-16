@@ -10,7 +10,7 @@ use Assert\AssertionFailedException;
 
 final class PokedexEntryNumber
 {
-    private const FORMAT_REGEX = '/#\d{3,4}/';
+    private const FORMAT_REGEX = '/#\d{4}/';
 
     public function __construct(private readonly string $number)
     {

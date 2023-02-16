@@ -21,7 +21,7 @@ final class CreatePokedexEntryControllerTest extends KernelEndpointTestCase
             'data' => [
                 'type' => 'pokedex-entries',
                 'attributes' => [
-                    'number' => '#003',
+                    'number' => '#0003',
                 ],
                 'relationships' => [
                     'pokemon' => [

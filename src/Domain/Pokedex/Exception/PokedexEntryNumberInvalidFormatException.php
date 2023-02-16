@@ -10,7 +10,7 @@ final class PokedexEntryNumberInvalidFormatException extends \DomainException
     {
         parent::__construct(
             sprintf(
-                'Invalid format for Pokedex entry number %s. Valid example: #001.',
+                'Invalid format for Pokedex entry number %s. Valid example: #0001.',
                 $value,
             ),
         );

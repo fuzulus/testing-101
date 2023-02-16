@@ -28,7 +28,7 @@ properties:
             number:
                 type: string
                 nullable: false
-                example: '#001'
+                example: '#0001'
             createdAt:
                 type: integer
                 nullable: false

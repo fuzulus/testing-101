@@ -41,7 +41,7 @@ final class UpdatePokedexEntryCommandHandlerTest extends IntegrationTestCase
     {
         $command = new UpdatePokedexEntryCommand(
             PokedexEntryId::fromString(PokedexEntryFixture::IDS[0]),
-            new PokedexEntryNumber('#003'),
+            new PokedexEntryNumber('#0003'),
         );
 
         self::$commandHandler->__invoke($command);
@@ -56,7 +56,7 @@ final class UpdatePokedexEntryCommandHandlerTest extends IntegrationTestCase
     {
         $command = new UpdatePokedexEntryCommand(
             PokedexEntryId::fromString(PokedexEntryFixture::IDS[0]),
-            new PokedexEntryNumber('#002'),
+            new PokedexEntryNumber('#0002'),
         );
 
         $this->expectException(PokedexEntryNumberTakenException::class);

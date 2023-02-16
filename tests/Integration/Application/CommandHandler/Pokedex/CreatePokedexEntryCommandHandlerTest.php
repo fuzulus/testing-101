@@ -42,7 +42,7 @@ final class CreatePokedexEntryCommandHandlerTest extends IntegrationTestCase
     {
         $command = new CreatePokedexEntryCommand(
             self::$pokedexEntryReadRepository->nextId(),
-            new PokedexEntryNumber('#003'),
+            new PokedexEntryNumber('#0003'),
             PokemonId::fromString(PokemonFixture::NO_POKEDEX_ENTRY_ID),
         );
 
@@ -59,7 +59,7 @@ final class CreatePokedexEntryCommandHandlerTest extends IntegrationTestCase
     {
         $command = new CreatePokedexEntryCommand(
             self::$pokedexEntryReadRepository->nextId(),
-            new PokedexEntryNumber('#002'),
+            new PokedexEntryNumber('#0002'),
             PokemonId::fromString(PokemonFixture::NO_POKEDEX_ENTRY_ID),
         );
 
@@ -71,7 +71,7 @@ final class CreatePokedexEntryCommandHandlerTest extends IntegrationTestCase
     {
         $command = new CreatePokedexEntryCommand(
             self::$pokedexEntryReadRepository->nextId(),
-            new PokedexEntryNumber('#003'),
+            new PokedexEntryNumber('#0003'),
             PokemonId::fromString(PokemonFixture::IDS[0]),
         );
 

@@ -17,7 +17,7 @@ final class PokedexEntryNumberTest extends UnitTestCase
 {
     public function testObjectWillBeCreatedWithValidPokedexEntryNumber(): void
     {
-        $value = '#001';
+        $value = '#0001';
 
         $pokedexEntryNumber = new PokedexEntryNumber($value);
 

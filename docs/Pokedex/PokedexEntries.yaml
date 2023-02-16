@@ -10,7 +10,7 @@ get:
             schema:
                 type: string
                 nullable: false
-                example: '#001'
+                example: '#0001'
     tags:
         - Pokedex
         - Pokemon

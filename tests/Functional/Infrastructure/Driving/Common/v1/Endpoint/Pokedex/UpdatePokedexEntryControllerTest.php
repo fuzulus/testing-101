@@ -22,7 +22,7 @@ final class UpdatePokedexEntryControllerTest extends KernelEndpointTestCase
                 'id' => PokedexEntryFixture::IDS[1],
                 'type' => 'pokedex-entries',
                 'attributes' => [
-                    'number' => '#005',
+                    'number' => '#0005',
                 ],
             ],
         ]);
