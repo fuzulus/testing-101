@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Functional\Common\v1\Endpoint\Pokedex;
+namespace App\Tests\Functional\Infrastructure\Driving\Common\v1\Endpoint\Pokedex;
 
 use App\Tests\Functional\KernelEndpointTestCase;
 use Symfony\Component\HttpFoundation\Response;
