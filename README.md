@@ -30,6 +30,7 @@ It contains various examples of:
    2. Setup Docker override
    3. Run Docker compose up
    4. Install all PHP dependencies via Composer
+3. SSH into the PHP container to run all the below available commands: `docker compose exec php bash` or `docker compose exec php sh`
 
 ## Project description
 
