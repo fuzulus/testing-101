@@ -33,6 +33,57 @@ It contains various examples of:
    3. Run Docker compose up
    4. Install all PHP dependencies via Composer
 
+## Project description
+
+The project is consisted of a small API for management of a [Pokémon Pokédex](https://www.pokemon.com/us/pokedex).
+
+The Pokémon data is currently inside `src/Infrastructure/Driven/Persistence/Doctrine/Fixtures/Data/pokemon.json` to focus more on the testing rather than data collection.
+In the future, a 3rd party API like [PokéAPI](https://pokeapi.co/docs/v2), might be used to expand the functionalities and tests.
+
+### Directory structure
+
+The directory structure is based on a combination of ([read for reference](https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/)):
+
+* hexagonal architecture 
+* onion architecture 
+* Domain-Driven Design
+* Command Query Responsibility Segregation
+
+It does not influence the testing in any way other than giving a clearer picture what should be tested with which type or level of test.
+
+```
+.
+├── Application
+│   ├── Bus                        # Command/Query/Event bus interfaces
+│   ├── Command                    # Command objects for making changes to the system
+│   ├── CommandHandler             # Handler classes for command objects
+│   ├── Query                      # Query objects for retrieving data from the system
+│   ├── QueryHandler               # Handler interfaces and abstract classes for query handlers
+│   ├── Repository                 # Read/write repository interfaces for entity management
+│   └── Service                    # Various services executing business logic
+├── Domain
+│   ├── Common                     # Commonly used models between all classes (e.g. Clock for time)
+│   ├── Pokedex                    # Pokédex related models
+│   └── Pokemon                    # Pokémon related models
+├── Infrastructure
+│   ├── Driven
+│   │   ├── Bus                    # Symfony messenger bus implementations of Application\Bus
+│   │   ├── EventSubscriber        # Symfony event subscribers (e.g. ExceptionSubscriber)
+│   │   ├── JsonApi                # JSON:API related implementations (e.g. ErrorHandler) 
+│   │   ├── ParamConverter         # Symfony parameters conversion (e.g. PokemonId)
+│   │   ├── Persistence            # Persistence related implementations (e.g. repositories, fixtures, migrations, etc.)
+│   │   ├── QueryHandler           # Handler classes for query objects
+│   │   ├── Request                # Request classes for endpoints in Driving
+│   │   ├── Response               # Response classes for endpoints in Driving
+│   │   └── Service                # Application\Service implementations
+│   └── Driving
+│       └── Common
+│           └── v1
+│               ├── ApiResponder   # Mapping for Undabot JSON:API library of objects being returned from the API
+│               ├── Endpoint       # Symfony controllers, the entrance points of the application
+│               └── Model          # Create/update/read models for endpoints
+```
+
 ## Tests
 
 This section describes the types of tests covered in the project, their goals and covered targets.
