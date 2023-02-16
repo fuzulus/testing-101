@@ -35,4 +35,71 @@ It contains various examples of:
 
 ## Tests
 
-// todo
+This section describes the types of tests covered in the project, their goals and covered targets.
+All types of tests have two commands: the Test command and the Coverage command.
+
+The Test command runs all the tests inside a single testsuite.
+
+The Coverage command runs all the tests inside a single testsuite and generates a coverage report.
+
+Available test suites are:
+
+* Unit
+* Integration
+* Functional
+
+**NOTICE** 
+
+It is recommended to run all the commands inside the PHP Docker container provided.
+The container is equipped with all the dependencies necessary to execute the commands. 
+
+### Unit
+
+#### Test command
+
+```shell
+composer test:unit
+```
+
+#### Coverage command: 
+
+```shell
+composer test:coverage:unit
+```
+
+The Unit test suite covers mostly the Domain folder. It is a showcase of examples on how to test: entities, value objects, utility services, etc.
+The Unit test suite uses mocks for various service dependencies and therefor does not test the integration of the services with the infrastructural layer (e.g. connection to the database).
+
+### Integration
+
+The Integration test suite covers mostly the Application folder. It showcases examples of testing: application level services, command/query handlers, etc.
+The Integration test suite does not use mocks (unless connecting to a 3rd party API). It uses all the infrastructure services available to test their integration and cooperation. 
+
+#### Test command
+
+```shell
+composer test:integration
+```
+
+#### Coverage command:
+
+```shell
+composer test:coverage:integration
+```
+
+### Functional
+
+#### Test command
+
+```shell
+composer test:functional
+```
+
+#### Coverage command:
+
+```shell
+composer test:coverage:functional
+```
+
+The Functional test suite covers mostly the Infrastructure folder. It showcases examples of testing endpoints - the main entrance points to our application.
+The Functional test suite does not use mocks (unless connecting to a 3rd party API). It uses all the infrastructure services available to validate that for a given input the endpoint will return an expected output.
