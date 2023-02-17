@@ -27,7 +27,9 @@ final class PokedexEntryCreateModel implements ApiModel
         public readonly string $number,
         /**
          * @ToOne(name="pokemon", type="pokemons")
+         *
          * @Assert\NotBlank
+         *
          * @Assert\Uuid(versions={"4"})
          */
         public readonly string $pokemonId,
