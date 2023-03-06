@@ -55,7 +55,7 @@ class Pokemon
             (string) $this->id,
             (string) $this->name,
             $this->type1->asStringOrFail(),
-            $this->type1->asStringOrNull(),
+            $this->type2->asStringOrNull(),
             $this->createdAt->asInteger(),
             $this->updatedAt->asIntegerOrNull(),
         );
