@@ -7,6 +7,7 @@ namespace App\Tests\Functional\Infrastructure\Driving\Common\v1\Endpoint\Pokedex
 use App\Infrastructure\Driven\Persistence\Doctrine\Fixtures\PokedexEntryFixture;
 use App\Infrastructure\Driven\Request\Pokedex\GetPokedexEntryRequest;
 use App\Tests\Functional\KernelEndpointTestCase;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -19,7 +20,7 @@ final class GetPokedexEntryControllerTest extends KernelEndpointTestCase
     public function testEndpointWillReturn200(): void
     {
         $request = $this->createRequest(
-            self::GET,
+            Request::METHOD_GET,
             sprintf(
                 '/api/v1/common/pokedex-entries/%s?%s',
                 PokedexEntryFixture::IDS[0],

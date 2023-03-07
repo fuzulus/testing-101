@@ -6,6 +6,7 @@ namespace App\Tests\Functional\Infrastructure\Driving\Common\v1\Endpoint\Pokedex
 
 use App\Infrastructure\Driven\Persistence\Doctrine\Fixtures\PokedexEntryFixture;
 use App\Tests\Functional\KernelEndpointTestCase;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -28,7 +29,7 @@ final class UpdatePokedexEntryControllerTest extends KernelEndpointTestCase
         ]);
 
         $request = $this->createRequest(
-            self::PATCH,
+            Request::METHOD_PATCH,
             sprintf(
                 '/api/v1/common/pokedex-entries/%s',
                 PokedexEntryFixture::IDS[1],

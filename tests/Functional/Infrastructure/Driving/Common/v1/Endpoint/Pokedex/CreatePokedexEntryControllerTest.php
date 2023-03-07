@@ -6,6 +6,7 @@ namespace App\Tests\Functional\Infrastructure\Driving\Common\v1\Endpoint\Pokedex
 
 use App\Infrastructure\Driven\Persistence\Doctrine\Fixtures\PokemonFixture;
 use App\Tests\Functional\KernelEndpointTestCase;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -35,7 +36,7 @@ final class CreatePokedexEntryControllerTest extends KernelEndpointTestCase
         ]);
 
         $request = $this->createRequest(
-            self::POST,
+            Request::METHOD_POST,
             '/api/v1/common/pokedex-entries',
             null,
             $body,
