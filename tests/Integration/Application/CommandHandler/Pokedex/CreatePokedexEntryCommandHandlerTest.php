@@ -13,6 +13,7 @@ use App\Domain\Pokedex\VO\PokedexEntryNumber;
 use App\Domain\Pokemon\PokemonId;
 use App\Infrastructure\Driven\Persistence\Doctrine\Fixtures\PokemonFixture;
 use App\Tests\Integration\IntegrationTestCase;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @coversDefaultClass \App\Application\CommandHandler\Pokedex\CreatePokedexEntryCommandHandler
@@ -23,6 +24,8 @@ final class CreatePokedexEntryCommandHandlerTest extends IntegrationTestCase
 {
     private static PokedexEntryReadRepository $pokedexEntryReadRepository;
 
+    private static EntityManagerInterface $entityManager;
+
     private static CreatePokedexEntryCommandHandler $commandHandler;
 
     public static function setUpBeforeClass(): void
@@ -32,6 +35,10 @@ final class CreatePokedexEntryCommandHandlerTest extends IntegrationTestCase
         /** @var PokedexEntryReadRepository $pokedexEntryReadRepository */
         $pokedexEntryReadRepository = self::getContainer()->get(PokedexEntryReadRepository::class);
         self::$pokedexEntryReadRepository = $pokedexEntryReadRepository;
+
+        /** @var EntityManagerInterface $entityManager */
+        $entityManager = self::getContainer()->get(EntityManagerInterface::class);
+        self::$entityManager = $entityManager;
 
         /** @var CreatePokedexEntryCommandHandler $commandHandler */
         $commandHandler = self::getContainer()->get(CreatePokedexEntryCommandHandler::class);
@@ -49,6 +56,8 @@ final class CreatePokedexEntryCommandHandlerTest extends IntegrationTestCase
         self::$commandHandler->__invoke($command);
 
         $pokedexEntry = self::$pokedexEntryReadRepository->get($command->id);
+
+        self::$entityManager->clear();
 
         static::assertSame((string) $command->id, (string) $pokedexEntry->id());
         static::assertSame((string) $command->number, (string) $pokedexEntry->number());
